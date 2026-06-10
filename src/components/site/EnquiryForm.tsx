@@ -101,9 +101,12 @@ export function EnquiryForm() {
           <CheckCircle2 className="h-8 w-8" />
         </div>
         <h3 className="mt-5 font-display text-2xl font-bold text-navy">Thank You!</h3>
-        <p className="mt-2 text-muted-foreground">We'll contact you within 30 minutes.</p>
+        <p className="mt-2 text-muted-foreground">We received your enquiry. We will contact you within 30 minutes. 🙏</p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
-          <a href={SITE.whatsappUrl} target="_blank" rel="noreferrer"
+          <a href="https://wa.me/919310209227" target="_blank" rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-5 py-2.5 font-semibold text-white shadow-md hover:opacity-90">
+            <WhatsAppIcon className="h-5 w-5" /> Chat on WhatsApp
+          </a>
             className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-5 py-2.5 font-semibold text-white shadow-md hover:opacity-90">
             <WhatsAppIcon className="h-5 w-5" /> Continue on WhatsApp →
           </a>
