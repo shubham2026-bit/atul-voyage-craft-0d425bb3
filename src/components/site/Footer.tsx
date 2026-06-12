@@ -48,6 +48,11 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 py-5 text-center text-xs text-white/60">
+        <div className="mb-2 flex flex-wrap justify-center gap-x-4 gap-y-1">
+          <Link to="/privacy-policy" className="hover:text-gold">Privacy Policy</Link>
+          <span aria-hidden>·</span>
+          <Link to="/terms-of-service" className="hover:text-gold">Terms of Service</Link>
+        </div>
         © {new Date().getFullYear()} {SITE.name}. All rights reserved.
       </div>
     </footer>
