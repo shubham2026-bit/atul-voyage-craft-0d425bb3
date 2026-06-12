@@ -7,7 +7,8 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { ShieldCheck, Mail, KeyRound } from "lucide-react";
 
-const ADMIN_EMAIL = "shubham03503@gmail.com";
+// Admin authorization is enforced server-side via the user_roles table.
+// The client no longer needs to know which email is the admin.
 
 export const Route = createFileRoute("/auth")({
   head: () => ({ meta: [{ title: "Admin Access — Atul Tour & Travels" }] }),
