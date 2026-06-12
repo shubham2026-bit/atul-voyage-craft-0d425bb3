@@ -123,7 +123,18 @@ export function EnquiryForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-4 rounded-2xl border bg-card p-6 shadow-elegant sm:p-8">
+    <form onSubmit={onSubmit} className="grid gap-4 rounded-2xl border bg-card p-6 shadow-elegant sm:p-8" aria-label="Send enquiry">
+      {/* Honeypot field — hidden from users, bots fill it */}
+      <input
+        type="text"
+        name="_honey"
+        value={form._honey}
+        onChange={e => update("_honey", e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+      />
       <div className="grid gap-4 sm:grid-cols-2">
         <Field label="Full Name *"><Input value={form.name} onChange={e => update("name", e.target.value)} required maxLength={120} placeholder="Your name" /></Field>
         <Field label="Mobile Number *"><Input value={form.phone} onChange={e => update("phone", e.target.value)} required maxLength={15} placeholder="10-digit mobile" inputMode="tel" /></Field>
