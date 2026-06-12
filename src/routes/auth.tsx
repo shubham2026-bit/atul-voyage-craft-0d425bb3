@@ -31,8 +31,8 @@ function AuthPage() {
   async function sendCode(e: React.FormEvent) {
     e.preventDefault();
     const normalized = email.trim().toLowerCase();
-    if (normalized !== ADMIN_EMAIL) {
-      toast.error("This email is not authorized.");
+    if (!/^\S+@\S+\.\S+$/.test(normalized)) {
+      toast.error("Please enter a valid email.");
       return;
     }
     setLoading(true);
