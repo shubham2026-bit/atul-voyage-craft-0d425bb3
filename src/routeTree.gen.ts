@@ -9,6 +9,8 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsOfServiceRouteImport } from './routes/terms-of-service'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as PackagesRouteImport } from './routes/packages'
 import { Route as HotelRouteImport } from './routes/hotel'
 import { Route as GalleryRouteImport } from './routes/gallery'
@@ -21,6 +23,16 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as AuthenticatedAdminEnquiriesRouteImport } from './routes/_authenticated/admin.enquiries'
 
+const TermsOfServiceRoute = TermsOfServiceRouteImport.update({
+  id: '/terms-of-service',
+  path: '/terms-of-service',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PackagesRoute = PackagesRouteImport.update({
   id: '/packages',
   path: '/packages',
@@ -86,6 +98,8 @@ export interface FileRoutesByFullPath {
   '/gallery': typeof GalleryRoute
   '/hotel': typeof HotelRoute
   '/packages': typeof PackagesRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
   '/admin': typeof AuthenticatedAdminRouteWithChildren
   '/admin/enquiries': typeof AuthenticatedAdminEnquiriesRoute
 }
@@ -98,6 +112,8 @@ export interface FileRoutesByTo {
   '/gallery': typeof GalleryRoute
   '/hotel': typeof HotelRoute
   '/packages': typeof PackagesRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
   '/admin': typeof AuthenticatedAdminRouteWithChildren
   '/admin/enquiries': typeof AuthenticatedAdminEnquiriesRoute
 }
@@ -112,6 +128,8 @@ export interface FileRoutesById {
   '/gallery': typeof GalleryRoute
   '/hotel': typeof HotelRoute
   '/packages': typeof PackagesRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRouteWithChildren
   '/_authenticated/admin/enquiries': typeof AuthenticatedAdminEnquiriesRoute
 }
@@ -126,6 +144,8 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/hotel'
     | '/packages'
+    | '/privacy-policy'
+    | '/terms-of-service'
     | '/admin'
     | '/admin/enquiries'
   fileRoutesByTo: FileRoutesByTo
@@ -138,6 +158,8 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/hotel'
     | '/packages'
+    | '/privacy-policy'
+    | '/terms-of-service'
     | '/admin'
     | '/admin/enquiries'
   id:
@@ -151,6 +173,8 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/hotel'
     | '/packages'
+    | '/privacy-policy'
+    | '/terms-of-service'
     | '/_authenticated/admin'
     | '/_authenticated/admin/enquiries'
   fileRoutesById: FileRoutesById
@@ -165,10 +189,26 @@ export interface RootRouteChildren {
   GalleryRoute: typeof GalleryRoute
   HotelRoute: typeof HotelRoute
   PackagesRoute: typeof PackagesRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  TermsOfServiceRoute: typeof TermsOfServiceRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms-of-service': {
+      id: '/terms-of-service'
+      path: '/terms-of-service'
+      fullPath: '/terms-of-service'
+      preLoaderRoute: typeof TermsOfServiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/packages': {
       id: '/packages'
       path: '/packages'
@@ -281,6 +321,8 @@ const rootRouteChildren: RootRouteChildren = {
   GalleryRoute: GalleryRoute,
   HotelRoute: HotelRoute,
   PackagesRoute: PackagesRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  TermsOfServiceRoute: TermsOfServiceRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

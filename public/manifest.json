@@ -1,0 +1,12 @@
+{
+  "name": "Atul Tour & Travels",
+  "short_name": "Atul Travels",
+  "description": "Safe, Comfortable & Reliable Travel in New Delhi",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1d3a",
+  "theme_color": "#d4a843",
+  "icons": [
+    { "src": "/favicon.ico", "sizes": "64x64", "type": "image/x-icon" }
+  ]
+}

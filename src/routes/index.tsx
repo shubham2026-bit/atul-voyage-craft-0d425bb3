@@ -13,9 +13,47 @@ import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Atul Tour & Travels — Taxi, Airport & Outstation in Delhi NCR" },
-      { name: "description", content: "Book safe taxi, airport transfers, outstation cabs and tour packages from New Delhi. 10+ years, 5000+ trips. Call 9810325525." },
+      { title: "Atul Tour & Travels | Best Cab Service in New Delhi - 24x7 Available" },
+      { name: "description", content: "Atul Tour & Travels offers safe, comfortable & reliable taxi services, airport transfers, outstation trips and tour packages in New Delhi. Call 9810325525." },
+      { property: "og:title", content: "Atul Tour & Travels | Best Cab Service Delhi" },
+      { property: "og:description", content: "Safe, Comfortable & Reliable Travel. 24x7 Taxi & Tour Services in New Delhi." },
+      { property: "og:url", content: "https://atul-tour-and-travel.vercel.app/" },
     ],
+    links: [{ rel: "canonical", href: "https://atul-tour-and-travel.vercel.app/" }],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        name: "Atul Tour & Travels",
+        description: "Safe, Comfortable & Reliable Travel. 24x7 Taxi & Tour Services in New Delhi",
+        url: "https://atul-tour-and-travel.vercel.app",
+        telephone: "+919810325525",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Sector-6, RK Puram",
+          addressLocality: "New Delhi",
+          addressRegion: "Delhi",
+          postalCode: "110022",
+          addressCountry: "IN",
+        },
+        geo: { "@type": "GeoCoordinates", latitude: "28.5672", longitude: "77.1822" },
+        openingHours: "Mo-Su 00:00-23:59",
+        priceRange: "₹₹",
+        areaServed: "New Delhi, NCR",
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Travel Services",
+          itemListElement: [
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Taxi Services" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Airport Transfers" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Outstation Trips" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Tour Packages" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Corporate Travel" } },
+          ],
+        },
+      }),
+    }],
   }),
   component: Home,
 });

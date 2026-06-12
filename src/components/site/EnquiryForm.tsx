@@ -22,14 +22,21 @@ export function EnquiryForm() {
     service_type: SERVICE_TYPES[0] as string,
     pickup: "", drop_location: "", travel_date: "", travel_time: "",
     passengers: "", notes: "",
+    _honey: "",
   });
 
   const update = (k: string, v: string) => setForm(f => ({ ...f, [k]: v }));
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
+    // Honeypot: bots fill hidden fields. Silently succeed.
+    if (form._honey) { setDone(true); return; }
     if (!form.name || !form.phone || !form.email || !form.pickup) {
       toast.error("Please fill all required fields");
+      return;
+    }
+    if (!/^[6-9]\d{9}$/.test(form.phone.trim())) {
+      toast.error("Please enter a valid 10-digit Indian mobile number");
       return;
     }
     if (!/^\S+@\S+\.\S+$/.test(form.email)) {
@@ -73,7 +80,7 @@ export function EnquiryForm() {
           method: "POST",
           headers: { "Content-Type": "application/json", Accept: "application/json" },
           body: JSON.stringify({
-            access_key: "9027a550-2226-4fde-9a02-6bc0285221a4",
+            access_key: import.meta.env.VITE_WEB3FORMS_KEY || "9027a550-2226-4fde-9a02-6bc0285221a4",
             subject: "🔔 New Enquiry - Atul Tour & Travels",
             from_name: "Atul Tour & Travels Website",
             email: form.email,
@@ -88,7 +95,7 @@ export function EnquiryForm() {
 
       setDone(true);
     } catch (err) {
-      toast.error(err instanceof Error ? err.message : "Failed to send. Please try again or call us.");
+      toast.error(err instanceof Error && err.message ? err.message : "Something went wrong. Please call us directly on 9810325525.");
     } finally {
       setLoading(false);
     }
@@ -116,7 +123,18 @@ export function EnquiryForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-4 rounded-2xl border bg-card p-6 shadow-elegant sm:p-8">
+    <form onSubmit={onSubmit} className="grid gap-4 rounded-2xl border bg-card p-6 shadow-elegant sm:p-8" aria-label="Send enquiry">
+      {/* Honeypot field — hidden from users, bots fill it */}
+      <input
+        type="text"
+        name="_honey"
+        value={form._honey}
+        onChange={e => update("_honey", e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+      />
       <div className="grid gap-4 sm:grid-cols-2">
         <Field label="Full Name *"><Input value={form.name} onChange={e => update("name", e.target.value)} required maxLength={120} placeholder="Your name" /></Field>
         <Field label="Mobile Number *"><Input value={form.phone} onChange={e => update("phone", e.target.value)} required maxLength={15} placeholder="10-digit mobile" inputMode="tel" /></Field>

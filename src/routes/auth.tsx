@@ -7,7 +7,8 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { ShieldCheck, Mail, KeyRound } from "lucide-react";
 
-const ADMIN_EMAIL = "shubham03503@gmail.com";
+// Admin authorization is enforced server-side via the user_roles table.
+// The client no longer needs to know which email is the admin.
 
 export const Route = createFileRoute("/auth")({
   head: () => ({ meta: [{ title: "Admin Access — Atul Tour & Travels" }] }),
@@ -30,8 +31,8 @@ function AuthPage() {
   async function sendCode(e: React.FormEvent) {
     e.preventDefault();
     const normalized = email.trim().toLowerCase();
-    if (normalized !== ADMIN_EMAIL) {
-      toast.error("This email is not authorized.");
+    if (!/^\S+@\S+\.\S+$/.test(normalized)) {
+      toast.error("Please enter a valid email.");
       return;
     }
     setLoading(true);
