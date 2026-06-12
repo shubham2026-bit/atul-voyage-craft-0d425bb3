@@ -22,14 +22,21 @@ export function EnquiryForm() {
     service_type: SERVICE_TYPES[0] as string,
     pickup: "", drop_location: "", travel_date: "", travel_time: "",
     passengers: "", notes: "",
+    _honey: "",
   });
 
   const update = (k: string, v: string) => setForm(f => ({ ...f, [k]: v }));
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
+    // Honeypot: bots fill hidden fields. Silently succeed.
+    if (form._honey) { setDone(true); return; }
     if (!form.name || !form.phone || !form.email || !form.pickup) {
       toast.error("Please fill all required fields");
+      return;
+    }
+    if (!/^[6-9]\d{9}$/.test(form.phone.trim())) {
+      toast.error("Please enter a valid 10-digit Indian mobile number");
       return;
     }
     if (!/^\S+@\S+\.\S+$/.test(form.email)) {
