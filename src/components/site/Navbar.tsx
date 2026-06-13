@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Phone, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { SITE } from "@/lib/site";
+import { Logo } from "@/components/site/Logo";
 import { Button } from "@/components/ui/button";
 
 const links = [
@@ -19,10 +20,10 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
         <Link to="/" className="flex items-center gap-2">
-          <div className="grid h-10 w-10 place-items-center rounded-md bg-gradient-gold text-navy font-bold shadow-gold">A</div>
+          <Logo className="h-11 w-11" />
           <div className="leading-tight">
             <div className="font-display text-base font-bold text-navy">{SITE.name}</div>
-            <div className="text-[10px] uppercase tracking-widest text-gold-dark">Since 2014</div>
+            <div className="text-[10px] uppercase tracking-widest text-gold-dark">Safe · Comfortable · Reliable</div>
           </div>
         </Link>
 
