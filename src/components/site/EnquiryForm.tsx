@@ -81,8 +81,8 @@ export function EnquiryForm() {
           headers: { "Content-Type": "application/json", Accept: "application/json" },
           body: JSON.stringify({
             access_key: import.meta.env.VITE_WEB3FORMS_KEY || "9027a550-2226-4fde-9a02-6bc0285221a4",
-            subject: "🔔 New Enquiry - Atul Tour & Travels",
-            from_name: "Atul Tour & Travels Website",
+            subject: "🔔 New Enquiry - Shree Radhe Travels",
+            from_name: "Shree Radhe Travels Website",
             email: form.email,
             name: form.name,
             message,

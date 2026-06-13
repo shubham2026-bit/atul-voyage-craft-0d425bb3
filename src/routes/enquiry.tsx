@@ -7,7 +7,7 @@ import { Phone, MessageCircle } from "lucide-react";
 export const Route = createFileRoute("/enquiry")({
   head: () => ({
     meta: [
-      { title: "Book a Ride — Atul Tour & Travels" },
+      { title: "Book a Ride — Shree Radhe Travels" },
       { name: "description", content: "Send a quick enquiry for taxi, airport transfer, outstation or tour packages. We respond within 30 minutes." },
     ],
   }),

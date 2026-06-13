@@ -11,7 +11,7 @@ import { ShieldCheck, Mail, KeyRound } from "lucide-react";
 // The client no longer needs to know which email is the admin.
 
 export const Route = createFileRoute("/auth")({
-  head: () => ({ meta: [{ title: "Admin Access — Atul Tour & Travels" }] }),
+  head: () => ({ meta: [{ title: "Admin Access — Shree Radhe Travels" }] }),
   component: AuthPage,
 });
 

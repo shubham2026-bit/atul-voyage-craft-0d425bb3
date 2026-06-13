@@ -6,7 +6,7 @@ import { SectionHead } from "@/components/site/SectionHead";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery — Atul Tour & Travels" },
+      { title: "Gallery — Shree Radhe Travels" },
       { name: "description", content: "Glimpses from our tours — destinations, fleet and happy travellers across India." },
     ],
   }),

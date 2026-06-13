@@ -9,8 +9,8 @@ import { Shield, Award, Users, Clock, BadgeCheck, Sparkles, Phone, MessageCircle
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — Atul Tour & Travels" },
-      { name: "description", content: "Atul Tour & Travels — a decade of safe, comfortable & reliable travel from New Delhi. Trained drivers, modern fleet and 5000+ happy travellers." },
+      { title: "About Us — Shree Radhe Travels" },
+      { name: "description", content: "Shree Radhe Travels — a decade of safe, comfortable & reliable travel from New Delhi. Trained drivers, modern fleet and 5000+ happy travellers." },
     ],
   }),
   component: AboutPage,

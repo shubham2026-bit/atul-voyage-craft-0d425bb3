@@ -7,7 +7,7 @@ import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Atul Tour & Travels, New Delhi" },
+      { title: "Contact — Shree Radhe Travels, New Delhi" },
       { name: "description", content: "Call 9810325525 or WhatsApp 9310209227. Office at Sector-6 RK Puram, New Delhi." },
     ],
   }),
@@ -47,7 +47,7 @@ function Contact() {
 
           <div id="map" className="mt-12 overflow-hidden rounded-2xl border shadow-elegant">
             <iframe
-              title="Atul Tour & Travels location"
+              title="Shree Radhe Travels location"
               src="https://www.google.com/maps?q=Sector+6+RK+Puram+New+Delhi+110022&output=embed"
               width="100%"
               height="420"

@@ -7,7 +7,7 @@ import { Star, Wifi, Coffee, Utensils, Car as CarIcon } from "lucide-react";
 export const Route = createFileRoute("/hotel")({
   head: () => ({
     meta: [
-      { title: "Hotel Bookings — Atul Tour & Travels" },
+      { title: "Hotel Bookings — Shree Radhe Travels" },
       { name: "description", content: "Curated hotel bookings across India — budget, business and luxury stays bundled with your travel." },
     ],
   }),

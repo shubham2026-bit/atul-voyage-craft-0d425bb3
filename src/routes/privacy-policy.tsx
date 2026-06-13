@@ -5,8 +5,8 @@ import { SITE } from "@/lib/site";
 export const Route = createFileRoute("/privacy-policy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy — Atul Tour & Travels" },
-      { name: "description", content: "How Atul Tour & Travels collects, uses, and protects your personal data." },
+      { title: "Privacy Policy — Shree Radhe Travels" },
+      { name: "description", content: "How Shree Radhe Travels collects, uses, and protects your personal data." },
       { name: "robots", content: "index, follow" },
     ],
     links: [{ rel: "canonical", href: "https://atul-tour-and-travel.vercel.app/privacy-policy" }],
