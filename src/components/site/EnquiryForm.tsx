@@ -76,19 +76,22 @@ export function EnquiryForm() {
 💬 Message: ${form.notes || "—"}
 ⏰ Received at: ${timestamp}`;
 
-        await fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({
-            access_key: import.meta.env.VITE_WEB3FORMS_KEY || "9027a550-2226-4fde-9a02-6bc0285221a4",
-            subject: "🔔 New Enquiry - Atul Tour & Travels",
-            from_name: "Atul Tour & Travels Website",
-            email: form.email,
-            name: form.name,
-            message,
-            botcheck: "",
-          }),
-        });
+        const web3formsKey = import.meta.env.VITE_WEB3FORMS_KEY;
+        if (web3formsKey) {
+          await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify({
+              access_key: web3formsKey,
+              subject: "🔔 New Enquiry - Atul Tour & Travels",
+              from_name: "Atul Tour & Travels Website",
+              email: form.email,
+              name: form.name,
+              message,
+              botcheck: "",
+            }),
+          });
+        }
       } catch {
         // non-blocking: enquiry already saved
       }
