@@ -5,8 +5,8 @@ import { SITE } from "@/lib/site";
 export const Route = createFileRoute("/terms-of-service")({
   head: () => ({
     meta: [
-      { title: "Terms of Service — Atul Tour & Travels" },
-      { name: "description", content: "Terms governing use of Atul Tour & Travels services, cancellations and refunds." },
+      { title: "Terms of Service — Shree Radhe Travels" },
+      { name: "description", content: "Terms governing use of Shree Radhe Travels services, cancellations and refunds." },
       { name: "robots", content: "index, follow" },
     ],
     links: [{ rel: "canonical", href: "https://atul-tour-and-travel.vercel.app/terms-of-service" }],

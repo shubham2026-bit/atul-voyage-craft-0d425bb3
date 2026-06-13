@@ -1,9 +1,9 @@
-# Atul Tour & Travels
+# Shree Radhe Travels
 
 🌐 **Live Website:** [https://atul-voyage-craft.lovable.app](https://atul-voyage-craft.lovable.app)
 🌐 **Vercel deployment:** [https://atul-tour-and-travel.vercel.app](https://atul-tour-and-travel.vercel.app)
 
-A travel services website for Atul Tour & Travels offering car rentals, hotel bookings, and tour packages.
+A travel services website for Shree Radhe Travels offering car rentals, hotel bookings, and tour packages.
 
 ## Production Readiness
 

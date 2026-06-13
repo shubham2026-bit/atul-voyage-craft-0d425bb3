@@ -1,4 +1,4 @@
-# Atul Tour & Travels — Build Plan
+# Shree Radhe Travels — Build Plan
 
 A premium navy + gold travel website inspired by vidhoopabharatjourney.com, with enquiry capture, email notifications, and a protected admin dashboard.
 

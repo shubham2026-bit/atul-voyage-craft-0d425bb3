@@ -6,7 +6,7 @@ import { SectionHead } from "@/components/site/SectionHead";
 export const Route = createFileRoute("/packages")({
   head: () => ({
     meta: [
-      { title: "Tour Packages — Atul Tour & Travels" },
+      { title: "Tour Packages — Shree Radhe Travels" },
       { name: "description", content: "Curated tour packages — Golden Triangle, Himalayas, Rajasthan, Kashmir, Char Dham and more. Custom itineraries from New Delhi." },
     ],
   }),

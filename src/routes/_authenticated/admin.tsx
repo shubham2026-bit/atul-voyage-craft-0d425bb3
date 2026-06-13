@@ -45,8 +45,8 @@ function AdminLayout() {
       <header className="border-b bg-card">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
           <Link to="/admin" className="flex items-center gap-2">
-            <div className="grid h-9 w-9 place-items-center rounded-md bg-gradient-gold text-navy font-bold">A</div>
-            <div className="font-display text-lg font-bold text-navy">Admin Panel</div>
+            <img src="/__l5e/assets-v1/35aedeed-bd65-42bd-bdae-bcd728eefa3a/shree-radhe-logo.jpeg" alt="Shree Radhe Travels" className="h-9 w-9 rounded-md object-contain bg-white" />
+            <div className="font-display text-lg font-bold text-navy">Shree Radhe Travels — Admin</div>
           </Link>
           <nav className="hidden gap-2 md:flex">
             <Link to="/admin" className={`inline-flex items-center gap-2 rounded-md px-3 py-1.5 text-sm font-medium ${!isList ? "bg-navy text-white" : "text-foreground/70 hover:bg-secondary"}`}>

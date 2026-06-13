@@ -13,9 +13,9 @@ import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Atul Tour & Travels | Best Cab Service in New Delhi - 24x7 Available" },
-      { name: "description", content: "Atul Tour & Travels offers safe, comfortable & reliable taxi services, airport transfers, outstation trips and tour packages in New Delhi. Call 9810325525." },
-      { property: "og:title", content: "Atul Tour & Travels | Best Cab Service Delhi" },
+      { title: "Shree Radhe Travels | Best Cab Service in New Delhi - 24x7 Available" },
+      { name: "description", content: "Shree Radhe Travels offers safe, comfortable & reliable taxi services, airport transfers, outstation trips and tour packages in New Delhi. Call 9810325525." },
+      { property: "og:title", content: "Shree Radhe Travels | Best Cab Service Delhi" },
       { property: "og:description", content: "Safe, Comfortable & Reliable Travel. 24x7 Taxi & Tour Services in New Delhi." },
       { property: "og:url", content: "https://atul-tour-and-travel.vercel.app/" },
     ],
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
       children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        name: "Atul Tour & Travels",
+        name: "Shree Radhe Travels",
         description: "Safe, Comfortable & Reliable Travel. 24x7 Taxi & Tour Services in New Delhi",
         url: "https://atul-tour-and-travel.vercel.app",
         telephone: "+919810325525",
@@ -359,7 +359,7 @@ function Fleet() {
 }
 
 const testimonials = [
-  { name: "Rohit Sharma", role: "Corporate client", text: "Reliable service for our team's daily commute. On time, every time. Atul ji's drivers are very professional." },
+  { name: "Rohit Sharma", role: "Corporate client", text: "Reliable service for our team's daily commute. On time, every time. Shree Radhe Travels' drivers are very professional." },
   { name: "Priya Verma", role: "Family trip — Jaipur", text: "Booked an Innova for our Golden Triangle tour. Driver was courteous, car was spotless. Highly recommended!" },
   { name: "Amit Kumar", role: "Airport transfer", text: "3 AM IGI pickup, driver was waiting 15 minutes early. This is the kind of service that builds trust." },
 ];
@@ -399,8 +399,8 @@ function EnquirySection() {
           <div className="mt-8 space-y-4 text-sm">
             <div className="flex items-center gap-3"><Phone className="h-5 w-5 text-gold" /><a href={`tel:${SITE.phone1}`}>{SITE.phone1}</a></div>
             <div className="flex items-center gap-3"><Phone className="h-5 w-5 text-gold" /><a href={`tel:${SITE.phone2}`}>{SITE.phone2}</a></div>
-            <div className="flex items-center gap-3"><MessageCircle className="h-5 w-5 text-gold" /><a href={SITE.whatsappUrl}>WhatsApp Business</a></div>
-            <div className="flex items-start gap-3"><MapPin className="h-5 w-5 text-gold shrink-0 mt-0.5" /><span>{SITE.address}</span></div>
+            <div className="flex items-center gap-3"><MessageCircle className="h-5 w-5 text-gold" /><a href={SITE.whatsappUrl} target="_blank" rel="noreferrer">WhatsApp Business</a></div>
+            <a href={SITE.mapsUrl} target="_blank" rel="noreferrer" className="flex items-start gap-3 hover:text-gold"><MapPin className="h-5 w-5 text-gold shrink-0 mt-0.5" /><span>{SITE.address}</span></a>
           </div>
         </div>
         <div className="lg:col-span-3">

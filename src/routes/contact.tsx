@@ -7,7 +7,7 @@ import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Atul Tour & Travels, New Delhi" },
+      { title: "Contact — Shree Radhe Travels, New Delhi" },
       { name: "description", content: "Call 9810325525 or WhatsApp 9310209227. Office at Sector-6 RK Puram, New Delhi." },
     ],
   }),
@@ -18,7 +18,7 @@ function Contact() {
   const cards = [
     { icon: Phone, title: "Call Us", value: SITE.phone1, href: `tel:${SITE.phone1}`, sub: `Alt: ${SITE.phone2}` },
     { icon: WhatsAppIcon, title: "WhatsApp", value: SITE.phone2, href: SITE.whatsappUrl, sub: "24/7 chat support" },
-    { icon: MapPin, title: "Visit Office", value: "Sector-6, RK Puram", href: "#map", sub: "New Delhi – 110022" },
+    { icon: MapPin, title: "Visit Office", value: "Sector-6, RK Puram", href: SITE.mapsUrl, sub: "New Delhi – 110022" },
   ];
   return (
     <SiteLayout>
@@ -47,7 +47,7 @@ function Contact() {
 
           <div id="map" className="mt-12 overflow-hidden rounded-2xl border shadow-elegant">
             <iframe
-              title="Atul Tour & Travels location"
+              title="Shree Radhe Travels location"
               src="https://www.google.com/maps?q=Sector+6+RK+Puram+New+Delhi+110022&output=embed"
               width="100%"
               height="420"
@@ -57,11 +57,22 @@ function Contact() {
             />
           </div>
 
+          <div className="mt-6 flex justify-center">
+            <a
+              href={SITE.mapsUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-navy px-6 py-3 text-sm font-semibold text-gold shadow-elegant transition-colors hover:bg-gold hover:text-navy"
+            >
+              <MapPin className="h-4 w-4" /> View on Google Maps
+            </a>
+          </div>
+
           <div className="mt-8 rounded-2xl border bg-card p-6 text-center sm:p-8">
             <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
               <div className="flex items-center gap-2"><Mail className="h-4 w-4 text-gold-dark" /> Always open — 24/7</div>
               <span className="hidden h-1 w-1 rounded-full bg-border sm:block" />
-              <div className="flex items-center gap-2"><MapPin className="h-4 w-4 text-gold-dark" /> {SITE.address}</div>
+              <a href={SITE.mapsUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-navy"><MapPin className="h-4 w-4 text-gold-dark" /> {SITE.address}</a>
             </div>
           </div>
         </div>

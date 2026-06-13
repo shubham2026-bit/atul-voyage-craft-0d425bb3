@@ -1,17 +1,18 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, MessageCircle, MapPin, Mail } from "lucide-react";
+import { Phone, MessageCircle, MapPin } from "lucide-react";
 import { SITE } from "@/lib/site";
+import { Logo } from "@/components/site/Logo";
 
 export function Footer() {
   return (
     <footer className="bg-gradient-hero text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2">
-            <div className="grid h-10 w-10 place-items-center rounded-md bg-gradient-gold text-navy font-bold">A</div>
+          <div className="flex items-center gap-3">
+            <Logo className="h-12 w-12" />
             <div className="font-display text-lg font-bold">{SITE.name}</div>
           </div>
-          <p className="mt-4 text-sm text-white/70">{SITE.tagline}. Trusted travel partner from New Delhi for over a decade.</p>
+          <p className="mt-4 text-sm text-white/70">{SITE.tagline}. Trusted travel partner from New Delhi for tour packages, hotel bookings, taxi services and pilgrimage tours.</p>
         </div>
 
         <div>
@@ -29,11 +30,12 @@ export function Footer() {
         <div>
           <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gold">Services</h4>
           <ul className="space-y-2 text-sm text-white/80">
-            <li>Taxi Services</li>
-            <li>Airport Transfers</li>
-            <li>Outstation Trips</li>
             <li>Tour Packages</li>
-            <li>Corporate Travel</li>
+            <li>Hotel Bookings</li>
+            <li>Taxi Services</li>
+            <li>Pilgrimage Tours</li>
+            <li>Airport Transfers</li>
+            <li>Family & Corporate Travel</li>
           </ul>
         </div>
 
@@ -43,7 +45,7 @@ export function Footer() {
             <li className="flex gap-2"><Phone className="h-4 w-4 text-gold" /><a href={`tel:${SITE.phone1}`}>{SITE.phone1}</a></li>
             <li className="flex gap-2"><Phone className="h-4 w-4 text-gold" /><a href={`tel:${SITE.phone2}`}>{SITE.phone2}</a></li>
             <li className="flex gap-2"><MessageCircle className="h-4 w-4 text-gold" /><a href={SITE.whatsappUrl} target="_blank" rel="noreferrer">WhatsApp Chat</a></li>
-            <li className="flex gap-2"><MapPin className="h-4 w-4 text-gold shrink-0" /><span>{SITE.address}</span></li>
+            <li className="flex gap-2"><MapPin className="h-4 w-4 text-gold shrink-0" /><a href={SITE.mapsUrl} target="_blank" rel="noreferrer" className="hover:text-gold">{SITE.address}</a></li>
           </ul>
         </div>
       </div>
