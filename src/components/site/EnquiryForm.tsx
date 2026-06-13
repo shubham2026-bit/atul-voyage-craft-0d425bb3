@@ -95,7 +95,7 @@ export function EnquiryForm() {
 
       setDone(true);
     } catch (err) {
-      toast.error(err instanceof Error && err.message ? err.message : "Something went wrong. Please call us directly on 9810325525.");
+      toast.error(err instanceof Error && err.message ? err.message : `Something went wrong. Please call us directly on ${SITE.phone1}.`);
     } finally {
       setLoading(false);
     }
