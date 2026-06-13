@@ -9,8 +9,8 @@ import { Shield, Award, Users, Clock, BadgeCheck, Sparkles, Phone, MessageCircle
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — Shree Radhe Travels" },
-      { name: "description", content: "Shree Radhe Travels — a decade of safe, comfortable & reliable travel from New Delhi. Trained drivers, modern fleet and 5000+ happy travellers." },
+      { title: "About Us — Shree Radhe Travels | Trusted Travel Partner in New Delhi" },
+      { name: "description", content: "Shree Radhe Travels offers tour packages, hotel bookings, taxi services, pilgrimage tours and family trips from New Delhi with safe, comfortable & reliable travel and 24/7 customer support." },
     ],
   }),
   component: AboutPage,
@@ -18,12 +18,12 @@ export const Route = createFileRoute("/about")({
 
 function AboutPage() {
   const values = [
-    { icon: Shield, t: "Safety First", d: "GPS-tracked cars, verified drivers, regular service." },
-    { icon: Clock, t: "Punctuality", d: "On-time pickup and drop — every single trip." },
-    { icon: Award, t: "10+ Years", d: "A decade of trust serving families & corporates." },
-    { icon: Users, t: "Trained Chauffeurs", d: "Polite, professional, route-savvy drivers." },
-    { icon: BadgeCheck, t: "Trusted Service", d: "Clear, honest dealings with every customer." },
-    { icon: Sparkles, t: "Premium Care", d: "Personal attention from booking to drop-off." },
+    { icon: Shield, t: "Safe & Comfortable Travel", d: "Well-maintained, sanitized vehicles driven by verified, experienced chauffeurs." },
+    { icon: Clock, t: "Reliable Customer Support", d: "24/7 assistance — from first enquiry to safe drop-off, we're always reachable." },
+    { icon: Award, t: "Tour Packages", d: "Curated Indian tour packages — Golden Triangle, Himalayas, Rajasthan, Kashmir & more." },
+    { icon: Users, t: "Family Trips", d: "Comfortable family-friendly itineraries with the right car size for every group." },
+    { icon: BadgeCheck, t: "Hotel Bookings", d: "Hand-picked hotels across India — budget, business and luxury stays, bundled with your tour." },
+    { icon: Sparkles, t: "Pilgrimage Tours", d: "Char Dham, Vaishno Devi, Mathura-Vrindavan, Haridwar-Rishikesh and other sacred journeys." },
   ];
 
   return (
@@ -31,7 +31,7 @@ function AboutPage() {
       <section className="bg-gradient-hero py-20 text-white">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
           <h1 className="font-display text-4xl font-bold sm:text-5xl">About {SITE.name}</h1>
-          <p className="mt-4 text-white/80">{SITE.tagline} — based in New Delhi since 2014.</p>
+          <p className="mt-4 text-white/80">{SITE.tagline} — your trusted travel partner from New Delhi.</p>
         </div>
       </section>
 
@@ -47,19 +47,24 @@ function AboutPage() {
             <Reveal delay={100}>
               <div className="space-y-4 text-foreground/80 leading-relaxed">
                 <p>
-                  {SITE.name} began in 2014 with a single car and a simple promise — to make travel
-                  across India safer, more comfortable, and easier to book. A decade later, that promise
-                  still drives every ride we operate from our base in RK Puram, New Delhi.
+                  <strong className="text-navy">{SITE.name}</strong> is a professional travel
+                  services company based in Sector-6, RK Puram, New Delhi. We specialize in
+                  tour packages, hotel bookings, taxi services, pilgrimage tours, airport
+                  transfers and family & corporate trips across India.
                 </p>
                 <p>
-                  From local Delhi NCR runs and IGI airport transfers to multi-day Golden Triangle,
-                  Himalayan, Rajasthan and Char Dham tours — our fleet of sedans, SUVs, Innovas and
-                  tempo travellers is ready for groups of any size.
+                  From a quick airport drop and Delhi NCR taxi runs to multi-day Golden
+                  Triangle, Himalayan, Rajasthan, Kashmir and Char Dham yatras — our
+                  well-maintained fleet of sedans, SUVs, Innovas and tempo travellers is
+                  ready for groups of any size, with hotel bookings handled end-to-end so
+                  you only have to enjoy the journey.
                 </p>
                 <p>
-                  What sets us apart is not just the cars, but the people behind the wheel —
-                  experienced chauffeurs who know the roads, respect your time, and treat every guest
-                  like family.
+                  What sets us apart is our commitment to <strong>safe and comfortable
+                  travel</strong>, transparent pricing, and <strong>reliable customer
+                  support</strong> available 24/7. Our experienced, courteous chauffeurs
+                  know every route and treat every guest like family — whether it's a
+                  sacred pilgrimage, a family holiday, or a corporate transfer.
                 </p>
                 <div className="flex flex-wrap gap-3 pt-3">
                   <Button asChild className="bg-gradient-gold text-navy font-semibold shadow-gold">
@@ -77,7 +82,7 @@ function AboutPage() {
 
       <section className="bg-secondary/40 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <SectionHead eyebrow="What We Stand For" title="OUR VALUES" />
+          <SectionHead eyebrow="What We Offer" title="OUR SERVICES" />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {values.map((v, i) => (
               <Reveal key={v.t} delay={i * 60}>
